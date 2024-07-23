@@ -1,7 +1,10 @@
-import Link from 'next/link';
+import { useState } from 'react';
+
 import { NavbarLink } from './navbar-link';
 
 export function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="h-12 bg-slate-900 flex justify-center">
       <div className="w-3/5 h-full flex flex-row justify-around items-center">
