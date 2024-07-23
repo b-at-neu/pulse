@@ -1,4 +1,22 @@
-export default function RootLayout({
+import type { Metadata } from 'next';
+import { Inter as FontSans } from 'next/font/google';
+
+import './global.css';
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans'
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Pulse',
+    template: `Pulse - %s`
+  },
+  description: 'Fully custom locker manager'
+};
+
+export default function Layout({
   children
 }: Readonly<{
   children: React.ReactNode;
@@ -6,7 +24,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <main>{children}</main>
+        <main className="">{children}</main>
       </body>
     </html>
   );
