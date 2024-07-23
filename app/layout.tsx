@@ -27,7 +27,7 @@ export default function Layout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>
+      <body className={fontSans.variable}>
         <main className="">{children}</main>
       </body>
     </html>
