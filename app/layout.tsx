@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 
+import { Navbar } from '@/components/navbar';
+
 import './global.css';
 
 const fontSans = FontSans({
@@ -28,6 +30,7 @@ export default function Layout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className='w-full min-h-screen bg-slate-900'>
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
