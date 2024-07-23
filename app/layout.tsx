@@ -22,13 +22,13 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
+    <html className={fontSans.variable}>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className={fontSans.variable}>
-        <main className="">{children}</main>
+      <body>
+        <main>{children}</main>
       </body>
     </html>
   );
