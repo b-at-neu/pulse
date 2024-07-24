@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 import { Title } from '@/components/ui/title';
 
 export default function Page() {
@@ -29,14 +30,14 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4">
-        <div>LOCKERS</div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <Card title={'Lockers'}></Card>
 
-        <div>LOCKS</div>
+        <Card title={'Locks'}></Card>
 
-        <div>CLASS</div>
+        <Card title={'Classes'}></Card>
 
-        <div>MEMBERSHIP</div>
+        <Card title={'Membership'}></Card>
       </div>
     </>
   );
