@@ -7,8 +7,8 @@ export function NavbarLink({ text, href }: { text: string; href: string }) {
   const path = usePathname();
 
   return (
-    <Button className={cn('rounded')}>
-      <Link href={href}>{text}</Link>
-    </Button>
+    <Link className={cn('rounded w-full text-center p-2 hover:bg-accent')} href={href}>
+      {text}
+    </Link>
   );
 }

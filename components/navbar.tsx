@@ -10,11 +10,13 @@ export function Navbar() {
 
   return (
     <nav className="flex justify-center">
-      <div className="md:w-3/5 h-full flex flex-col md:flex-row justify-around items-center">
+      <div className="hidden md:flex flex-row w-3/5 justify-around items-center">
+        <NavbarLinks />
+      </div>
+      <div className="md:hidden flex flex-col w-full items-center">
         {open && <NavbarLinks />}
         <div className="flex items-center flex-row">
-          {!open && <p className='p-3'>home</p>}
-          <Button onMouseDown={() => setOpen(!open)}>
+          <Button variant="ghost" onMouseDown={() => setOpen(!open)}>
             {!open && <ChevronDown />}
             {open && <ChevronUp />}
             <span className="sr-only">Show Pages</span>
