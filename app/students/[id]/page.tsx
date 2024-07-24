@@ -17,14 +17,16 @@ export default function Page() {
 
   return (
     <>
-      <Title>
-        {data.lastName}, {data.firstName} ({data.class})
-      </Title>
+      <div className="lg:flex gap-5">
+        <Title>
+          {data.lastName}, {data.firstName} ({data.class})
+        </Title>
 
-      <div className="flex gap-3 md:gap-5 md:p-3 flex-wrap text-nowrap">
-        <Badge>Locker: {data.locker}</Badge>
-        <Badge>Lock: {data.lock}</Badge>
-        <Badge>Combination: {data.combination}</Badge>
+        <div className="flex gap-3 md:gap-5 p-3 flex-wrap text-nowrap">
+          <Badge>Locker: {data.locker}</Badge>
+          <Badge>Lock: {data.lock}</Badge>
+          <Badge>Combination: {data.combination}</Badge>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4">
