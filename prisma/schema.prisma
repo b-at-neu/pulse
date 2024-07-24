@@ -16,7 +16,7 @@ model Student {
   topLocker           Boolean
 
   classes         Class[]
-  membership      Membership        @relation(fields: [membershipId], references: [id])
+  membership      Membership?       @relation(fields: [membershipId], references: [id])
   membershipId    String
   StudentToLocker StudentToLocker[]
   StudentToLock   StudentToLock[]
