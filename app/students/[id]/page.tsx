@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Title } from "@/components/ui/title";
+import { Badge } from '@/components/ui/badge';
+import { Title } from '@/components/ui/title';
 
 export default function Page() {
   const data = {
@@ -12,7 +12,7 @@ export default function Page() {
     class: '7b',
     locker: '#131',
     lock: 987654321,
-    combination: '22-31-15',
+    combination: '22-31-15'
   };
 
   return (
