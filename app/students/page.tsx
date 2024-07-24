@@ -199,8 +199,8 @@ export default function Page() {
         {data.map((v, i) => (
           <Bar
             data={[
+              [v.lastName + ',', 'w-1/3'],
               [v.firstName, 'w-1/3'],
-              [v.lastName, 'w-1/3'],
               [v.class, 'w-1/6'],
               [v.locker, 'w-1/6']
             ]}
