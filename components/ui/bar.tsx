@@ -4,14 +4,16 @@ export function Bar({
   data: [
     {
       data: string;
-      width: number;
+      width: string;
     }
   ];
 }) {
   return (
     <div className="w-full h-8 border rounded-lg bg-muted">
-      {data.map((v, i) => (
-        <div key={i}></div>
+      {data.map(({ data, width }, i) => (
+        <div key={i} className={width}>
+          {data}
+        </div>
       ))}
     </div>
   );
