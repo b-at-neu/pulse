@@ -21,7 +21,7 @@ export default function Page() {
         {data.lastName}, {data.firstName} ({data.class})
       </Title>
 
-      <div className="flex gap-5 p-3 flex-wrap text-nowrap">
+      <div className="flex gap-3 md:gap-5 md:p-3 flex-wrap text-nowrap">
         <Badge>Locker: {data.locker}</Badge>
         <Badge>Lock: {data.lock}</Badge>
         <Badge>Combination: {data.combination}</Badge>
