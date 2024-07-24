@@ -37,14 +37,12 @@ model Membership {
 }
 
 model StudentToClass {
-  year Int
-
   student   Student @relation(fields: [studentId], references: [id])
   studentId String
   class     Class   @relation(fields: [classId], references: [id])
   classId   String
 
-  @@id([year, studentId, classId])
+  @@id([studentId, classId])
 }
 
 model Class {
