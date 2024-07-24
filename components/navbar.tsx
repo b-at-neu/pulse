@@ -9,7 +9,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex justify-center">
+    <nav className="flex justify-center bg-background">
       <div className="hidden md:flex flex-row w-3/5 justify-around items-center">
         <NavbarLinks />
       </div>
