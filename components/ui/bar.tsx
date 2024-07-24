@@ -1,14 +1,16 @@
-import { cn } from '@/lib/utils';
 import { ReactElement } from 'react';
+import { Url } from 'next/dist/shared/lib/router/router';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
-export function Bar({ data }: { data: [data: string | ReactElement, width: string][] }) {
+export function Bar({ data, link }: { data: [data: string | ReactElement, width: string][]; link: Url }) {
   return (
-    <div className="flex flex-row items-center gap-1 bg-muted w-full h-8 border rounded-lg px-3">
+    <Link className="flex flex-row items-center gap-1 bg-muted w-full h-8 border rounded-lg px-3" href={''}>
       {data.map(([data, width], i) => (
         <div key={i} className={cn(width, 'truncate')}>
           {data}
         </div>
       ))}
-    </div>
+    </Link>
   );
 }
