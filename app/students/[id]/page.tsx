@@ -4,8 +4,8 @@ import { Title } from "@/components/ui/title";
 export default function Page() {
   const data = {
     id: 'e80a33c3-1395-4b5f-8522-3f4c75b8c5a0',
-    firstName: 'Alice',
-    lastName: 'Smith',
+    firstName: 'Alice Scarlett',
+    lastName: 'Smith Sofia Perez',
     applicationReceived: true,
     depositPaid: false,
     topLocker: true,
@@ -21,7 +21,7 @@ export default function Page() {
         {data.lastName}, {data.firstName} ({data.class})
       </Title>
 
-      <div className="flex gap-5 p-3">
+      <div className="flex gap-5 p-3 flex-wrap text-nowrap">
         <Badge>Locker: {data.locker}</Badge>
         <Badge>Lock: {data.lock}</Badge>
         <Badge>Combination: {data.combination}</Badge>
