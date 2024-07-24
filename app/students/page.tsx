@@ -106,6 +106,7 @@ export default function Page() {
               [v.class, 'w-1/6'],
               [v.locker, 'w-1/6']
             ]}
+            link={'/students/' + v.id}
             key={i}
           />
         ))}
