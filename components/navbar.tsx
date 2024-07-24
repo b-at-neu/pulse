@@ -15,7 +15,7 @@ export function Navbar() {
         <NavbarLinks />
       </div>
       <div
-        className={cn('md:hidden flex flex-col justify-around w-full items-center transition-all', open ? 'h-60' : 'h-12')}
+        className={cn('md:hidden flex flex-col gap-2 justify-around w-full items-center transition-all', open ? 'h-80' : 'h-12')}
       >
         {open && <NavbarLinks />}
         <Button className="w-full grow" variant="ghost" onClick={() => setOpen(!open)}>
