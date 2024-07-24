@@ -1,6 +1,5 @@
 import { Bar } from '@/components/ui/bar';
 import { Title } from '@/components/ui/title';
-import { DoorClosed } from 'lucide-react';
 
 export default function Page() {
   const data = [
