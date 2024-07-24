@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavbarLinks } from '@/components/navbar-links';
 
@@ -11,13 +11,13 @@ export function Navbar() {
   return (
     <nav className="h-12 bg-slate-900 flex justify-center">
       <div className="md:w-3/5 h-full flex flex-col md:flex-row justify-around items-center">
-        {open && (
-          <NavbarLinks />
-        )}
+        {open && <NavbarLinks />}
         <div className="flex items-center flex-row">
           {!open && <p>home</p>}
           <Button onMouseDown={() => setOpen(!open)}>
-            <ChevronDown />
+            {!open && <ChevronDown />}
+            {open && <ChevronUp />}
+            <span className='sr-only'>Show Pages</span>
           </Button>
         </div>
       </div>
