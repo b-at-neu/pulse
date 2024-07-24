@@ -54,6 +54,8 @@ model Class {
   year   Int
 
   StudentToClass StudentToClass[]
+
+  @@unique([grade, letter, year])
 }
 
 enum Status {
