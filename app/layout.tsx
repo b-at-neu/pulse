@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 
 import { Navbar } from '@/components/navbar';
-
+import { cn } from '@/lib/utils';
 import './global.css';
 
 const fontSans = FontSans({
@@ -24,14 +24,14 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={fontSans.variable}>
+    <html>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className='w-full min-h-screen'>
+      <body className={cn('w-full min-h-screen', fontSans.variable)}>
         <Navbar />
-        <main className='m-3'>{children}</main>
+        <main className="m-3">{children}</main>
       </body>
     </html>
   );
