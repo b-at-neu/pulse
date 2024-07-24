@@ -15,7 +15,19 @@ export default function Page() {
 
   return (
     <>
-      <Title>{data.lastName}, {data.firstName} ({data.class})</Title>
+      <Title>
+        {data.lastName}, {data.firstName} ({data.class})
+      </Title>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4">
+        <div>LOCKERS</div>
+
+        <div>LOCKS</div>
+
+        <div>CLASS</div>
+
+        <div>MEMBERSHIP</div>
+      </div>
     </>
   );
 }
