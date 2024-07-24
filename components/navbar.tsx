@@ -15,13 +15,11 @@ export function Navbar() {
       </div>
       <div className="md:hidden flex flex-col w-full items-center">
         {open && <NavbarLinks />}
-        <div className="flex items-center flex-row">
-          <Button variant="ghost" onMouseDown={() => setOpen(!open)}>
-            {!open && <ChevronDown />}
-            {open && <ChevronUp />}
-            <span className="sr-only">Show Pages</span>
-          </Button>
-        </div>
+        <Button className='w-full' variant="ghost" onClick={() => setOpen(!open)}>
+          {!open && <ChevronDown />}
+          {open && <ChevronUp />}
+          <span className="sr-only">Show Pages</span>
+        </Button>
       </div>
     </nav>
   );
