@@ -14,6 +14,32 @@ export default function Page() {
     locker: '#131',
     lock: 987654321,
     combination: '22-31-15',
+    lockers: [
+      {
+        year: 2025,
+        number: 334,
+        floor: 2,
+        status: 'Ready'
+      },
+      {
+        year: 2024,
+        number: 429,
+        floor: 1,
+        status: 'Ready'
+      },
+      {
+        year: 2024,
+        number: 428,
+        floor: 1,
+        status: 'Ready'
+      },
+      {
+        year: 2023,
+        number: 7,
+        floor: 1,
+        status: 'Ready'
+      }
+    ],
     classes: [
       {
         year: 2025,
