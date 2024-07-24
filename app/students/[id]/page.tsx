@@ -13,7 +13,29 @@ export default function Page() {
     class: '7b',
     locker: '#131',
     lock: 987654321,
-    combination: '22-31-15'
+    combination: '22-31-15',
+    classes: [
+      {
+        year: 2022,
+        grade: 7,
+        letter: 'f'
+      },
+      {
+        year: 2023,
+        grade: 8,
+        letter: 'f'
+      },
+      {
+        year: 2024,
+        grade: 9,
+        letter: 'c'
+      },
+      {
+        year: 2025,
+        grade: 9,
+        letter: 'b'
+      }
+    ]
   };
 
   return (
