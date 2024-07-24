@@ -32,7 +32,7 @@ export default function Layout({
       <body className={cn('w-full min-h-screen', fontSans.variable)}>
         <Navbar />
         <div className="flex justify-center">
-          <main className="flex flex-col gap-5 m-3 w-full 2xl:w-4/5">{children}</main>
+          <main className="flex flex-col gap-3 md:gap-5 m-3 w-full 2xl:w-4/5">{children}</main>
         </div>
       </body>
     </html>
