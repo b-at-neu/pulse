@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { NavbarLinks } from '@/components/navbar-links';
-import { cn } from '@/lib/utils';
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
