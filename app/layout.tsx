@@ -31,7 +31,7 @@ export default function Layout({
       </head>
       <body className='w-full min-h-screen'>
         <Navbar />
-        <main>{children}</main>
+        <main className='m-3'>{children}</main>
       </body>
     </html>
   );
