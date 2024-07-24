@@ -79,15 +79,27 @@ export default function Page() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <Card title={'Lockers'}></Card>
+        <Card title={'Lockers'}>
+          {data.lockers.map((v, i) => (
+            <div key={i} className="flex">
+              <p className="w-1/4">{v.year}</p>
+              <p className="w-1/4">#{v.number}</p>
+              <p className="w-1/4">Floor {v.floor}</p>
+              <p className="w-1/4">{v.status}</p>
+            </div>
+          ))}
+        </Card>
 
         <Card title={'Locks'}></Card>
 
         <Card title={'Classes'}>
           {data.classes.map((v, i) => (
-            <div key={i} className='flex'>
-              <p className='w-1/2'>{v.year}</p>
-              <p className='w-1/2'>{v.grade}{v.letter}</p>
+            <div key={i} className="flex">
+              <p className="w-1/2">{v.year}</p>
+              <p className="w-1/2">
+                {v.grade}
+                {v.letter}
+              </p>
             </div>
           ))}
         </Card>
