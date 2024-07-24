@@ -6,7 +6,7 @@ on:
   pull_request:
     branches:
       - main
-      - "feature/**"
+      - 'feature/**'
 jobs:
   run-prettier-check:
     runs-on: ubuntu-latest
