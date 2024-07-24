@@ -1,5 +1,5 @@
-import { House, User, Lock, BookKey, DoorOpen } from "lucide-react";
-import { NavbarLink } from "@/components/navbar-link";
+import { House, User, Lock, BookKey, DoorOpen } from 'lucide-react';
+import { NavbarLink } from '@/components/navbar-link';
 
 export function NavbarLinks() {
   return (
