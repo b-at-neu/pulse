@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { ReactElement } from 'react';
 
-export function NavbarLink({ text, href }: { text: string; href: string }) {
+export function NavbarLink({ text, href, icon }: { text: string; href: string; icon: ReactElement }) {
   const path = usePathname();
 
   return (
-    <Link className={cn('rounded w-full text-center p-2 hover:bg-accent')} href={href}>
+    <Link className={cn('flex gap-5 justify-center rounded w-full p-2 hover:bg-accent')} href={href}>
+      {icon}
       {text}
     </Link>
   );
