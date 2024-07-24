@@ -17,7 +17,7 @@ model Student {
 
   classes         Class[]
   membership      Membership?       @relation(fields: [membershipId], references: [id])
-  membershipId    String
+  membershipId    String?
   StudentToLocker StudentToLocker[]
   StudentToLock   StudentToLock[]
 }
