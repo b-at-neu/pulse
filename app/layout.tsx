@@ -29,7 +29,7 @@ export default function Layout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className='w-full min-h-screen bg-slate-950 text-white'>
+      <body className='w-full min-h-screen'>
         <Navbar />
         <main>{children}</main>
       </body>
