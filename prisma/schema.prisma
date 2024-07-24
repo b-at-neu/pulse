@@ -22,22 +22,14 @@ model Student {
   StudentToLock   StudentToLock[]
 }
 
-model Year {
-  year            Int               @id
-  Class           Class[]
-  StudentToLocker StudentToLocker[]
-  StudentToLock   StudentToLock[]
-}
-
 model Class {
   id     String  @id @default(uuid())
   grade  Int
   letter String? @db.Char(1)
+  year   Int
 
-  year      Year     @relation(fields: [yearYear], references: [year])
   Student   Student? @relation(fields: [studentId], references: [id])
   studentId String?
-  yearYear  Int
 }
 
 enum MembershipStatus {
@@ -61,14 +53,14 @@ enum Status {
 }
 
 model StudentToLocker {
-  year         Year    @relation(fields: [yearYear], references: [year])
-  yearYear     Int
+  year Int
+
   student      Student @relation(fields: [studentId], references: [id])
   studentId    String
   locker       Locker  @relation(fields: [lockerNumber], references: [number])
   lockerNumber Int
 
-  @@id([yearYear, studentId, lockerNumber])
+  @@id([year, studentId, lockerNumber])
 }
 
 model Locker {
@@ -80,14 +72,14 @@ model Locker {
 }
 
 model StudentToLock {
-  year       Year    @relation(fields: [yearYear], references: [year])
-  yearYear   Int
+  year Int
+
   student    Student @relation(fields: [studentId], references: [id])
   studentId  String
   lock       Lock    @relation(fields: [lockSerial], references: [serial])
   lockSerial Int
 
-  @@id([yearYear, studentId, lockSerial])
+  @@id([year, studentId, lockSerial])
 }
 
 model Lock {
