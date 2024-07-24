@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Title } from "@/components/ui/title";
 
 export default function Page() {
@@ -10,7 +11,8 @@ export default function Page() {
     topLocker: true,
     class: '7b',
     locker: '#131',
-    lock: 987654321
+    lock: 987654321,
+    combination: '22-31-15',
   };
 
   return (
@@ -18,6 +20,12 @@ export default function Page() {
       <Title>
         {data.lastName}, {data.firstName} ({data.class})
       </Title>
+
+      <div className="flex gap-5 p-3">
+        <Badge>Locker: {data.locker}</Badge>
+        <Badge>Lock: {data.lock}</Badge>
+        <Badge>Combination: {data.combination}</Badge>
+      </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4">
         <div>LOCKERS</div>
