@@ -6,3 +6,96 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Student {
+  id                  String  @id @default(uuid())
+  firstName           String
+  lastName            String
+  applicationReceived Boolean
+  depositPaid         Boolean
+  topLocker           Boolean
+
+  classes         Class[]
+  membership      Membership        @relation(fields: [membershipId], references: [id])
+  membershipId    String
+  StudentToLocker StudentToLocker[]
+  StudentToLock   StudentToLock[]
+}
+
+model Year {
+  year            Int               @id
+  Class           Class[]
+  StudentToLocker StudentToLocker[]
+  StudentToLock   StudentToLock[]
+}
+
+model Class {
+  id     String  @id @default(uuid())
+  grade  Int
+  letter String? @db.Char(1)
+
+  year      Year     @relation(fields: [yearYear], references: [year])
+  Student   Student? @relation(fields: [studentId], references: [id])
+  studentId String?
+  yearYear  Int
+}
+
+enum MembershipStatus {
+  VERIFIED
+  UNPAID
+}
+
+model Membership {
+  id      String           @id @default(uuid())
+  name    String
+  email   String
+  status  MembershipStatus
+  comment String
+  Student Student[]
+}
+
+enum Status {
+  READY
+  STICKY
+  BROKEN
+}
+
+model StudentToLocker {
+  year         Year    @relation(fields: [yearYear], references: [year])
+  yearYear     Int
+  student      Student @relation(fields: [studentId], references: [id])
+  studentId    String
+  locker       Locker  @relation(fields: [lockerNumber], references: [number])
+  lockerNumber Int
+
+  @@id([yearYear, studentId, lockerNumber])
+}
+
+model Locker {
+  number          Int               @id
+  floor           Int
+  status          Status
+  comment         String
+  StudentToLocker StudentToLocker[]
+}
+
+model StudentToLock {
+  year       Year    @relation(fields: [yearYear], references: [year])
+  yearYear   Int
+  student    Student @relation(fields: [studentId], references: [id])
+  studentId  String
+  lock       Lock    @relation(fields: [lockSerial], references: [serial])
+  lockSerial Int
+
+  @@id([yearYear, studentId, lockSerial])
+}
+
+model Lock {
+  serial        Int             @id
+  combination1  Int
+  combination2  Int
+  combination3  Int
+  status        Status
+  comment       String
+  StudentToLock StudentToLock[]
+}
