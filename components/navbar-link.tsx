@@ -7,7 +7,7 @@ export function NavbarLink({ text, href, icon }: { text: string; href: string; i
   const path = usePathname();
 
   return (
-    <Link className={cn('flex gap-5 justify-center rounded w-full p-2 hover:bg-accent')} href={href}>
+    <Link className={cn('flex gap-5 justify-center rounded w-full p-3 hover:bg-accent')} href={href}>
       {icon}
       {text}
     </Link>
