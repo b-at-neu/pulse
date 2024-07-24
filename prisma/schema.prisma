@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id                  String  @id @default(uuid())
+  firstName           String
+  lastName            String
+  applicationReceived Boolean
+  depositPaid         Boolean
+  topLocker           Boolean
+
+  membership      Membership?       @relation(fields: [membershipId], references: [id])
+  membershipId    String?
+  StudentToLocker StudentToLocker[]
+  StudentToLock   StudentToLock[]
+  StudentToClass  StudentToClass[]
+}
+
+enum MembershipStatus {
+  VERIFIED
+  UNPAID
+}
+
+model Membership {
+  id      String           @id @default(uuid())
+  name    String
+  email   String
+  status  MembershipStatus
+  comment String
+  Student Student[]
+}
+
+model StudentToClass {
+  student   Student @relation(fields: [studentId], references: [id])
+  studentId String
+  class     Class   @relation(fields: [classId], references: [id])
+  classId   String
+
+  @@id([studentId, classId])
+}
+
+model Class {
+  id     String  @id @default(uuid())
+  grade  Int
+  letter String? @db.Char(1)
+  year   Int
+
+  StudentToClass StudentToClass[]
+
+  @@unique([grade, letter, year])
+}
+
+enum Status {
+  READY
+  STICKY
+  BROKEN
+}
+
+model StudentToLocker {
+  year Int
+
+  student      Student @relation(fields: [studentId], references: [id])
+  studentId    String
+  locker       Locker  @relation(fields: [lockerNumber], references: [number])
+  lockerNumber Int
+
+  @@id([year, studentId, lockerNumber])
+}
+
+model Locker {
+  number          Int               @id
+  floor           Int
+  status          Status
+  comment         String
+  StudentToLocker StudentToLocker[]
+}
+
+model StudentToLock {
+  year Int
+
+  student    Student @relation(fields: [studentId], references: [id])
+  studentId  String
+  lock       Lock    @relation(fields: [lockSerial], references: [serial])
+  lockSerial Int
+
+  @@id([year, studentId, lockSerial])
+}
+
+model Lock {
+  serial        Int             @id
+  combination1  Int
+  combination2  Int
+  combination3  Int
+  status        Status
+  comment       String
+  StudentToLock StudentToLock[]
+}
