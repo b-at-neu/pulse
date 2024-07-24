@@ -16,14 +16,9 @@ export default function Page() {
     combination: '22-31-15',
     classes: [
       {
-        year: 2022,
-        grade: 7,
-        letter: 'f'
-      },
-      {
-        year: 2023,
-        grade: 8,
-        letter: 'f'
+        year: 2025,
+        grade: 9,
+        letter: 'b'
       },
       {
         year: 2024,
@@ -31,9 +26,14 @@ export default function Page() {
         letter: 'c'
       },
       {
-        year: 2025,
-        grade: 9,
-        letter: 'b'
+        year: 2023,
+        grade: 8,
+        letter: 'f'
+      },
+      {
+        year: 2022,
+        grade: 7,
+        letter: 'f'
       }
     ]
   };
