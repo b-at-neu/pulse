@@ -15,21 +15,11 @@ model Student {
   depositPaid         Boolean
   topLocker           Boolean
 
-  classes         Class[]
   membership      Membership?       @relation(fields: [membershipId], references: [id])
   membershipId    String?
   StudentToLocker StudentToLocker[]
   StudentToLock   StudentToLock[]
-}
-
-model Class {
-  id     String  @id @default(uuid())
-  grade  Int
-  letter String? @db.Char(1)
-  year   Int
-
-  Student   Student? @relation(fields: [studentId], references: [id])
-  studentId String?
+  StudentToClass  StudentToClass[]
 }
 
 enum MembershipStatus {
@@ -44,6 +34,26 @@ model Membership {
   status  MembershipStatus
   comment String
   Student Student[]
+}
+
+model StudentToClass {
+  year Int
+
+  student   Student @relation(fields: [studentId], references: [id])
+  studentId String
+  class     Class   @relation(fields: [classId], references: [id])
+  classId   String
+
+  @@id([year, studentId, classId])
+}
+
+model Class {
+  id     String  @id @default(uuid())
+  grade  Int
+  letter String? @db.Char(1)
+  year   Int
+
+  StudentToClass StudentToClass[]
 }
 
 enum Status {
