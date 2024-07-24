@@ -57,7 +57,14 @@ export default function Page() {
 
         <Card title={'Locks'}></Card>
 
-        <Card title={'Classes'}></Card>
+        <Card title={'Classes'}>
+          {data.classes.map((v, i) => (
+            <div key={i} className='flex'>
+              <p className='w-1/2'>{v.year}</p>
+              <p className='w-1/2'>{v.grade}{v.letter}</p>
+            </div>
+          ))}
+        </Card>
 
         <Card title={'Membership'}></Card>
       </div>
