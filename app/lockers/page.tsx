@@ -80,7 +80,7 @@ export default function Page() {
             data={[
               [v.locker, 'w-1/3'],
               [v.lastName + ',', 'w-1/3'],
-              [v.firstName, 'w-1/3'],
+              [v.firstName, 'w-1/3']
             ]}
             link={'/lockers/' + v.id}
             key={i}
