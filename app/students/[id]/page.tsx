@@ -66,17 +66,32 @@ export default function Page() {
 
   return (
     <>
-      <div className="lg:flex gap-5">
-        <Title>
-          {data.lastName}, {data.firstName} ({data.class})
-        </Title>
+      <Title>
+        {data.lastName}, {data.firstName}
+      </Title>
+      <div className="flex gap-5">
+        <Card title={'Class'}>
+          <p className="text-5xl font-bold text-center">{data.class}</p>
+        </Card>
 
-        <div className="flex gap-3 md:gap-5 py-3 flex-wrap text-nowrap">
-          <Badge>Locker: {data.locker}</Badge>
-          <Badge>Lock: {data.lock}</Badge>
-          <Badge>Combination: {data.combination}</Badge>
-        </div>
+        <Card title={'Locker'}>
+          <p className="text-5xl font-bold text-center">{data.locker}</p>
+        </Card>
+
+        <Card title={'Lock'}>
+          <p className="text-5xl font-bold text-center">{data.lock}</p>
+        </Card>
+
+        <Card title={'Combination'}>
+          <p className="text-5xl font-bold text-center">{data.combination}</p>
+        </Card>
+
+        <Card title={'Membership Status'}>
+          <p className="text-5xl font-bold text-center">Verified</p>
+        </Card>
       </div>
+
+      <Title>History</Title>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         <Card title={'Lockers'}>
