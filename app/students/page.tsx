@@ -1,201 +1,103 @@
 import { Bar } from '@/components/ui/bar';
 import { Title } from '@/components/ui/title';
-import { DoorClosed } from 'lucide-react';
 
 export default function Page() {
   const data = [
     {
-      firstName: 'Benedikt',
-      lastName: 'Winkler',
-      class: '8c',
-      locker: '#131'
-    },
-    {
+      id: 'e80a33c3-1395-4b5f-8522-3f4c75b8c5a0',
       firstName: 'Alice',
       lastName: 'Smith',
+      applicationReceived: true,
+      depositPaid: false,
+      topLocker: true,
       class: '7b',
-      locker: '#215'
+      locker: '#131',
+      lock: 987654321
     },
     {
+      id: 'b738d7e9-6b51-4d47-bc68-6c0f6a0af7e5',
       firstName: 'John',
       lastName: 'Doe',
+      applicationReceived: true,
+      depositPaid: true,
+      topLocker: false,
       class: '9a',
-      locker: '#102'
+      locker: '#102',
+      lock: 123456789
     },
     {
+      id: 'c3f8b4e4-8d6c-4b4e-8058-2a2d3a5f1b74',
       firstName: 'Emily',
       lastName: 'Brown',
+      applicationReceived: false,
+      depositPaid: false,
+      topLocker: false,
       class: '6d',
-      locker: '#311'
+      locker: '#311',
+      lock: 234567890
     },
+    // Add more example student data here
     {
+      id: '6d6f7e1a-7c8b-4e95-8c3c-9b5f1b3a4e2d',
       firstName: 'Michael',
-      lastName: 'Jones',
-      class: '8b',
-      locker: '#178'
-    },
-    {
-      firstName: 'Sophia',
-      lastName: 'Garcia',
-      class: '7c',
-      locker: '#243'
-    },
-    {
-      firstName: 'Daniel',
-      lastName: 'Martinez',
-      class: '9b',
-      locker: '#129'
-    },
-    {
-      firstName: 'Olivia',
       lastName: 'Johnson',
-      class: '6a',
-      locker: '#387'
-    },
-    {
-      firstName: 'Liam',
-      lastName: 'Brown',
+      applicationReceived: true,
+      depositPaid: true,
+      topLocker: true,
       class: '8c',
-      locker: '#155'
+      locker: '#215',
+      lock: 345678912
     },
     {
-      firstName: 'Ava',
-      lastName: 'Wilson',
-      class: '7d',
-      locker: '#276'
-    },
-    {
-      firstName: 'William',
-      lastName: 'Taylor',
+      id: '9a2b4c8d-5e6f-7a9b-1c2d-3e4f5a6b7c8d',
+      firstName: 'Sophia',
+      lastName: 'Martinez',
+      applicationReceived: false,
+      depositPaid: false,
+      topLocker: false,
       class: '6b',
-      locker: '#422'
+      locker: '#405',
+      lock: 456789123
     },
     {
-      firstName: 'Emma',
-      lastName: 'Anderson',
+      id: '1e2a3d4c-5b6f-7a8d-9e1b-2c3d4e5f6a7',
+      firstName: 'Oliver',
+      lastName: 'Garcia',
+      applicationReceived: true,
+      depositPaid: true,
+      topLocker: false,
       class: '9c',
-      locker: '#193'
+      locker: '#127',
+      lock: 567891234
     },
     {
-      firstName: 'James',
-      lastName: 'Adams',
-      class: '8a',
-      locker: '#132'
-    },
-    {
-      firstName: 'Mia',
-      lastName: 'Hernandez',
+      id: '2b4c8d6e-7f1a-9b2c-4e5f-6a7b8c9d1e2',
+      firstName: 'Isabella',
+      lastName: 'Rodriguez',
+      applicationReceived: true,
+      depositPaid: false,
+      topLocker: false,
       class: '7a',
-      locker: '#298'
+      locker: '#302',
+      lock: 678912345
     },
     {
-      firstName: 'Alexander',
-      lastName: 'Gonzalez',
-      class: '6c',
-      locker: '#365'
-    },
-    {
-      firstName: 'Charlotte',
-      lastName: 'Perez',
-      class: '9d',
-      locker: '#208'
-    },
-    {
-      firstName: 'Benjamin',
-      lastName: 'Lee',
+      id: '3d4c5b6f-7a8d-9e1b-2c3d-4e5f6a7b8c',
+      firstName: 'William',
+      lastName: 'Lopez',
+      applicationReceived: false,
+      depositPaid: false,
+      topLocker: true,
       class: '8b',
-      locker: '#186'
-    },
-    {
-      firstName: 'Amelia',
-      lastName: 'Scott',
-      class: '7c',
-      locker: '#254'
-    },
-    {
-      firstName: 'Ethan',
-      lastName: 'King',
-      class: '6d',
-      locker: '#333'
-    },
-    {
-      firstName: 'Harper',
-      lastName: 'Rivera',
-      class: '9a',
-      locker: '#114'
-    },
-    {
-      firstName: 'Evelyn',
-      lastName: 'Gomez',
-      class: '8c',
-      locker: '#142'
-    },
-    {
-      firstName: 'Sebastian',
-      lastName: 'Parker',
-      class: '7b',
-      locker: '#272'
-    },
-    {
-      firstName: 'Zoe',
-      lastName: 'Evans',
-      class: '6a',
-      locker: '#398'
-    },
-    {
-      firstName: 'Henry',
-      lastName: 'Morris',
-      class: '9c',
-      locker: '#199'
-    },
-    {
-      firstName: 'Luna',
-      lastName: 'Stewart',
-      class: '8d',
-      locker: '#167'
-    },
-    {
-      firstName: 'Owen',
-      lastName: 'Harris',
-      class: '7d',
-      locker: '#286'
-    },
-    {
-      firstName: 'Lily',
-      lastName: 'Cook',
-      class: '6b',
-      locker: '#409'
-    },
-    {
-      firstName: 'Gabriel',
-      lastName: 'Collins',
-      class: '9b',
-      locker: '#121'
-    },
-    {
-      firstName: 'Sofia',
-      lastName: 'Baker',
-      class: '8a',
-      locker: '#128'
-    },
-    {
-      firstName: 'Carter',
-      lastName: 'Young',
-      class: '7c',
-      locker: '#265'
-    },
-    {
-      firstName: 'Hannah',
-      lastName: 'Ward',
-      class: '6d',
-      locker: '#344'
+      locker: '#219',
+      lock: 789123456
     }
   ];
 
   return (
     <>
       <Title>Students</Title>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {data.map((v, i) => (
           <Bar
             data={[
@@ -204,6 +106,7 @@ export default function Page() {
               [v.class, 'w-1/6'],
               [v.locker, 'w-1/6']
             ]}
+            link={'/students/' + v.id}
             key={i}
           />
         ))}
